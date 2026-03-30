@@ -33,6 +33,10 @@ yarn-error.*
 # local env files
 .env*.local
 
+# Environment variables - NEVER commit
+.env
+.env.production
+
 # typescript
 *.tsbuildinfo
 
