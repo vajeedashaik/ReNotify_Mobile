@@ -8,15 +8,15 @@ import {
   Image,
   Alert,
   ActivityIndicator,
-  SafeAreaView,
   TextInput,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useUser } from '@clerk/clerk-expo';
 import { useRouter } from 'expo-router';
 import * as ImagePicker from 'expo-image-picker';
 import * as DocumentPicker from 'expo-document-picker';
 import { Camera, Image as ImageIcon, FileText, CloudUpload } from 'lucide-react-native';
-import { supabase } from '../../lib/supabase';
+import { getSupabaseClient, supabase } from '../../lib/supabase';
 import { extractBillData } from '../../lib/mindee';
 import { useBillsStore } from '../../stores/billsStore';
 import Button from '../../components/ui/Button';
@@ -97,17 +97,19 @@ export default function UploadScreen() {
     setIsSaving(true);
     try {
       let fileUrl: string | undefined;
+      const clerkToken = useBillsStore.getState().clerkToken;
+      const storageClient = clerkToken ? getSupabaseClient(clerkToken) : supabase;
 
       if (fileUri) {
         const filename = `${user.id}/${Date.now()}.${mimeType.split('/')[1]}`;
         const response = await fetch(fileUri);
         const blob = await response.blob();
-        const { data, error } = await supabase.storage
+        const { data, error } = await storageClient.storage
           .from('bills')
           .upload(filename, blob, { contentType: mimeType });
 
         if (!error && data) {
-          const { data: urlData } = supabase.storage.from('bills').getPublicUrl(data.path);
+          const { data: urlData } = storageClient.storage.from('bills').getPublicUrl(data.path);
           fileUrl = urlData.publicUrl;
         }
       }

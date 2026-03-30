@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx expo:*)",
+      "Bash(node -e \"console.log\\(require\\(''c:/Users/kittu/OneDrive/Desktop/ReNotify_Mobile/node_modules/react-native-reanimated/package.json''\\).version\\)\")",
+      "Bash(node -e \"const e=require\\(''./node_modules/expo/package.json''\\); console.log\\(''expo:'', e.version\\); const m=e.dependencies||{}; console.log\\(''reanimated:'', m[''react-native-reanimated'']||''not specified''\\)\")",
+      "Bash(npm view:*)",
+      "Bash(node -e \"require\\(''c:/Users/kittu/OneDrive/Desktop/ReNotify_Mobile/node_modules/react-native-reanimated/plugin''\\)\")",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"const v=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\)\\); console.log\\(v.filter\\(x=>x.startsWith\\(''''8.''''\\)\\).join\\(''''\\\\n''''\\)\\);\")"
+    ]
+  }
+}

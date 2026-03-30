@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
   Switch,
   Alert,
-  SafeAreaView,
   ScrollView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useUser, useAuth } from '@clerk/clerk-expo';
 import { useRouter } from 'expo-router';
 import { LogOut, Bell, FileText, Clock, AlertCircle } from 'lucide-react-native';

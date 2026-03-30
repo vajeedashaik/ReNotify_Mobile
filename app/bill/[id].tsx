@@ -7,9 +7,9 @@ import {
   TouchableOpacity,
   Alert,
   Image,
-  SafeAreaView,
   ActivityIndicator,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { ArrowLeft, Edit2, Trash2, Shield, Wrench, Calendar, Clock } from 'lucide-react-native';
 import { useBillsStore } from '../../stores/billsStore';
