@@ -85,8 +85,10 @@ export default function UploadScreen() {
       setWarrantyExpiry(data.warrantyExpiry ?? '');
       setAmcRenewalDate(data.amcRenewalDate ?? '');
       setServiceDueDate(data.serviceDueDate ?? '');
-    } catch (e) {
-      Alert.alert('OCR Failed', 'Could not extract data. Please fill in manually.');
+    } catch (e: any) {
+      const msg = e?.message || String(e) || 'Unknown error';
+      console.error('[OCR Error]', msg, e);
+      Alert.alert('OCR Failed', msg);
     } finally {
       setIsExtracting(false);
     }

@@ -8,7 +8,12 @@
       "Bash(npm view:*)",
       "Bash(node -e \"require\\(''c:/Users/kittu/OneDrive/Desktop/ReNotify_Mobile/node_modules/react-native-reanimated/plugin''\\)\")",
       "Bash(node -e \":*)",
-      "Bash(node -e \"const v=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\)\\); console.log\\(v.filter\\(x=>x.startsWith\\(''''8.''''\\)\\).join\\(''''\\\\n''''\\)\\);\")"
+      "Bash(node -e \"const v=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\)\\); console.log\\(v.filter\\(x=>x.startsWith\\(''''8.''''\\)\\).join\\(''''\\\\n''''\\)\\);\")",
+      "Bash(node -e \"process.stdin.resume\\(\\); let d=''''''''; process.stdin.on\\(''''data'''',c=>d+=c\\); process.stdin.on\\(''''end'''',\\(\\)=>{ const v=JSON.parse\\(d\\); console.log\\(''''latest expo-go versions:'''', v.slice\\(-5\\).join\\('''', ''''\\)\\); }\\);\")",
+      "WebFetch(domain:api.expo.dev)",
+      "Bash(npm uninstall:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" -H \"Authorization: Token md_BVzQ0N-_7Db-UMnGLBfcLqmkbIz5wx_PlNjnICfBstY\" \"https://api.mindee.net/v1/products/mindee/invoices/v4/predict\")",
+      "WebSearch"
     ]
   }
 }

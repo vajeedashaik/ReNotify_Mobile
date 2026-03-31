@@ -95,8 +95,8 @@ export default function ProfileScreen() {
             <Switch
               value={notificationsEnabled}
               onValueChange={setNotificationsEnabled}
-              trackColor={{ false: colors.gray[200], true: `${colors.primary}66` }}
-              thumbColor={notificationsEnabled ? colors.primary : colors.gray[400]}
+              trackColor={{ false: colors.gray[200], true: colors.primary }}
+              thumbColor={colors.white}
             />
           </View>
         </Card>

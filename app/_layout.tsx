@@ -6,11 +6,9 @@ import { useFonts, Inter_400Regular, Inter_600SemiBold, Inter_700Bold } from '@e
 import * as SplashScreen from 'expo-splash-screen';
 import { View, ActivityIndicator, Text, StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { enableScreens } from 'react-native-screens';
 import { colors } from '../constants/theme';
 import { useBillsStore } from '../stores/billsStore';
 
-enableScreens();
 SplashScreen.preventAutoHideAsync();
 
 // ─── Error Boundary ────────────────────────────────────────────────────────────
